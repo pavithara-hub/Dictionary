@@ -20,7 +20,6 @@ class SearchFragment:Fragment(R.layout.fragment_search),RecyclerAdapter.OnWordCl
 
     lateinit var recyclerAdapter: RecyclerAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
-    private val recycler_data: List<RecyclerData>? = null
 
 
     companion object {
@@ -53,7 +52,7 @@ class SearchFragment:Fragment(R.layout.fragment_search),RecyclerAdapter.OnWordCl
                 recyclerAdapter.notifyDataSetChanged()
                 recycler_view.setHasFixedSize(true)
                 recycler_view.adapter = recyclerAdapter
-                setupData(recycler_data!!)
+
                 Toast.makeText(context, "successful", Toast.LENGTH_LONG).show()
             }
 
@@ -82,10 +81,6 @@ class SearchFragment:Fragment(R.layout.fragment_search),RecyclerAdapter.OnWordCl
 
     }
 
-    private fun setupData(recycler_data: List<RecyclerData>) {
-        recyclerAdapter = RecyclerAdapter(requireActivity(),recycler_data,this)
-        recycler_view.setAdapter(recyclerAdapter)
-    }
 
     
 
